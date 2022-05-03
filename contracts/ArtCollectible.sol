@@ -11,10 +11,11 @@ contract ArtCollectible is Ownable, ERC1155 {
 
     constructor()
         ERC1155(
-            'ipfs://QmUusoGauKGU6EsGDLbqPiZK8PEnHDRYHa4c9yvJxhTHcg/{id}.json'
+            //ipfs://QmXPmDdULtA1sRac9sLxx38EWDQx7qVU96uuqgu7QoUnFE/{id}.json'
+            'https://kissiimmee.art/kissiimmee/{id}.json'
         )
     {
-        setName('Mandelbrot Julia Set Collection');
+        setName('Wassilys at Kissiimmee Collection');
     }
 
     function setURI(string memory _newuri) public onlyOwner {
