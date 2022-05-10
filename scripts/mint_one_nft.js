@@ -2,7 +2,7 @@
 (async () => {
     try {
         const totalNfts = 1; // Total number of NFTs in your collection
-
+        const TokenId = 20;  //Input your token id here
         console.log('Running `mint_one_nft` script...');
 
         const contractName = 'KisSIIMmee'; // Change for other contracts
@@ -27,33 +27,28 @@
 
         // NFTs to mint in each transaction -- only one in this example
         const mintSize = 1;
-        for (let i = 1, j = totalNfts; i <= j; i += mintSize) {
-            if (mintSize === 0) {
-                throw new Error(
-                    'Please specify greater than zero value for mintSize'
-                );
-            }
-            let currentMintSize = mintSize;
-            if (i + mintSize <= totalNfts + 1) {
-                currentMintSize = mintSize;
-            } else {
-                // Case when totalNfts is not a multiple of mintSize
-                currentMintSize = totalNfts - i + 1;
-            }
-            // Array containing tokenIds
-            const ids = getTokenIds(i, currentMintSize);
-            // Array containing amount to mint for each tokenId, 1 in case of NFT's
-            const amounts = getAmounts(currentMintSize);
-            console.log('Token Ids to be minted in current batch => ', ids);
-            console.log(
-                'Amounts to be minted for each Token Id in current batch => ',
-                amounts
+        
+        if (mintSize === 0) {
+            throw new Error(
+                'Please specify greater than zero value for mintSize'
             );
-            await artCollectible.methods
-                .mintBatch(ids, amounts)
-                .send({ from: accounts[0] });
-            console.log('successfully batch minted NFTs for current batch');
         }
+        let currentMintSize = 1;
+
+        // Array containing tokenIds
+        const ids = getTokenIds(TokenId, currentMintSize);
+        // Array containing amount to mint for each tokenId, 1 in case of NFT's
+        const amounts = getAmounts(currentMintSize);
+        console.log('Token Ids to be minted in current batch => ', ids);
+        console.log(
+            'Amounts to be minted for each Token Id in current batch => ',
+            amounts
+        );
+        await artCollectible.methods
+            .mintBatch(ids, amounts)
+            .send({ from: accounts[0] });
+        console.log('successfully batch minted NFTs for current batch');
+        
 
         // https://docs.openzeppelin.com/contracts/2.x/api/token/erc721#IERC721-balanceOf-address-
         // Returns number of NFTs in owner's account for tokenID 1
