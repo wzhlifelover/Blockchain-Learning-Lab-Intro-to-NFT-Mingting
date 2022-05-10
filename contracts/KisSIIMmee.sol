@@ -4,18 +4,17 @@ pragma solidity >=0.4.22 <0.9.0;
 import '@openzeppelin/contracts/token/ERC1155/ERC1155.sol';
 import '@openzeppelin/contracts/access/Ownable.sol';
 
-contract ArtCollectible is Ownable, ERC1155 {
+contract KisSIIMmee is Ownable, ERC1155 {
     // Base URI
     string private baseURI;
     string public name;
 
     constructor()
         ERC1155(
-            //ipfs://QmXPmDdULtA1sRac9sLxx38EWDQx7qVU96uuqgu7QoUnFE/{id}.json'
             'https://kissiimmee.art/kissiimmee/{id}.json'
         )
     {
-        setName('Wassilys at Kissiimmee Collection');
+        setName('KisSIIMmee Collection');
     }
 
     function setURI(string memory _newuri) public onlyOwner {
