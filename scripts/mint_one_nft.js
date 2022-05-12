@@ -1,12 +1,18 @@
 // Right click on the script name and hit 'Run' to execute
 (async () => {
     try {
-        const totalNfts = 1; // Total number of NFTs in your collection
+
+        ////////////////// PLEASE FILL IN THE VARIABLES HERE////////////
         const TokenId = 20;  //Input your token id here
+        const contract_address = 'YOUR_DEPLOYED_CONTRACT_ADDRESS'; //Your Deployed Contract Address
+        ///////////////////////////////////////////////////////////////
+        
+        const totalNfts = 1; // Total number of NFTs in your collection
+        
         console.log('Running `mint_one_nft` script...');
 
         const contractName = 'KisSIIMmee'; // Change for other contracts
-        const contract_address = 'YOUR_DEPLOYED_CONTRACT_ADDRESS';
+        
 
         // Note that the script needs the ABI which is generated from the compilation artifact.
         // Make sure contract is compiled and artifacts are generated
@@ -17,7 +23,7 @@
         );
         const accounts = await web3.eth.getAccounts();
 
-        const artCollectible = new web3.eth.Contract(
+        const KisSIIMmee = new web3.eth.Contract(
             metadata.abi,
             contract_address,
             {
@@ -44,7 +50,7 @@
             'Amounts to be minted for each Token Id in current batch => ',
             amounts
         );
-        await artCollectible.methods
+        await KisSIIMmee.methods
             .mintBatch(ids, amounts)
             .send({ from: accounts[0] });
         console.log('successfully batch minted NFTs for current batch');
@@ -52,7 +58,7 @@
 
         // https://docs.openzeppelin.com/contracts/2.x/api/token/erc721#IERC721-balanceOf-address-
         // Returns number of NFTs in owner's account for tokenID 1
-        const balance = await artCollectible.methods
+        const balance = await KisSIIMmee.methods
             .balanceOf(accounts[0], 1)
             .call();
         console.log('balance: ', balance);
