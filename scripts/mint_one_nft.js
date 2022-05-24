@@ -2,14 +2,14 @@
 (async () => {
     try {
 
-        ////////////////// PLEASE FILL IN THE VARIABLES HERE////////////
-        const TokenId = 20;  //Input your token id here
+        ///////////////////////////// !!! PLEASE FILL IN THE VARIABLES HERE !!! //////////////
+        const TokenId = 0;  //Input your token id here
         const contract_address = 'YOUR_DEPLOYED_CONTRACT_ADDRESS'; //Your Deployed Contract Address
-        ///////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////
         
         const totalNfts = 1; // Total number of NFTs in your collection
         
-        console.log('Running `mint_one_nft` script...');
+        console.log('Running `mint_one_nft` script...'); // Start Minting
 
         const contractName = 'KisSIIMmee'; // Change for other contracts
         
@@ -50,6 +50,8 @@
             'Amounts to be minted for each Token Id in current batch => ',
             amounts
         );
+
+        // Actually Minting (Call the mintBatch() function) !!! 
         await KisSIIMmee.methods
             .mintBatch(ids, amounts)
             .send({ from: accounts[0] });
