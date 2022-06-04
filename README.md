@@ -14,7 +14,7 @@ This repository contains source codes and scripts accomplying the NFT Learning L
 - [Node](https://nodejs.org/en/)
 - [Pinata](https://www.pinata.cloud)
 - [Opensea](https://opensea.io)
-- [Rarible](https://rarible.com/)
+- [Rarible (Rinkeby)](https://rinkeby.rarible.com/)
 - [Rinkeby Faucet](https://rinkebyfaucet.com/)
 - [Polygon NFT Minter](https://mintnft.today/)
 
