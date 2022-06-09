@@ -18,6 +18,18 @@ This repository contains source codes and scripts accomplying the NFT Learning L
 - [Rinkeby Faucet](https://rinkebyfaucet.com/)
 - [Polygon NFT Minter](https://mintnft.today/)
 
+## Attendees & Token IDs
+| Name     | Token ID |
+| ----------- | ----------- |
+| User1      | 1      |
+| User2   | 2        |
+| User2   | 3       |
+| User2   | 4        |
+| User2   | 5       |
+| User2   | 6      |
+| User2   | 7       |
+| User2   | 8        |
+
 ## How to Use the Scripts
 ```console
 node utils/rename-images-to-numbered-sequence.js
