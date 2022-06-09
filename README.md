@@ -29,6 +29,7 @@ This repository contains source codes and scripts accomplying the NFT Learning L
 | Adam  | 6       |
 | Ben  | 7      |
 | Sophie  | 8     |
+| Joseph  | 9     |
 
 
 ## How to Use the Scripts
